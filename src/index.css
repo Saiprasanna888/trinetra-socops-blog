@@ -1376,9 +1376,6 @@ select {
 
 /* PostCard Share Icon */
 .post-card-share-btn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -1392,7 +1389,6 @@ select {
   opacity: 0;
   transform: scale(0.8);
   transition: all var(--transition-base);
-  z-index: 10;
 }
 
 .post-card:hover .post-card-share-btn {
@@ -1410,6 +1406,38 @@ select {
   width: 16px;
   height: 16px;
   fill: currentColor;
+}
+
+.share-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.post-card-copied {
+  position: absolute;
+  right: 40px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--neon-blue);
+  color: var(--neon-blue);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.post-card-copied.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Toast/Copied Feedback */

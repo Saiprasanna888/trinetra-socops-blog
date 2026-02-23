@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TAG_COLORS } from '../data/samplePosts';
 
 function PostCard({ post, index = 0 }) {
+    const [showCopied, setShowCopied] = useState(false);
+
     const formatDate = (timestamp) => {
         if (!timestamp) return '';
         const date = timestamp.seconds
@@ -18,8 +21,6 @@ function PostCard({ post, index = 0 }) {
         if (!name) return 'TS';
         return name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
     };
-
-
 
     return (
         <div className={`post-card animate-fade-in-up stagger-${(index % 6) + 1}`} style={{ position: 'relative' }}>
@@ -75,20 +76,23 @@ function PostCard({ post, index = 0 }) {
                     </div>
                 </div>
             </Link>
-            <button
-                className="post-card-share-btn"
-                title="Copy Link"
-                onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    const url = `${window.location.origin}/post/${post.id}`;
-                    navigator.clipboard.writeText(url);
-                    // Simple alert for feedback since we don't have a global toast yet
-                    // or better, find a way to show "Copied" locally
-                }}
-            >
-                <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" /></svg>
-            </button>
+            <div className="share-controls">
+                <button
+                    className="post-card-share-btn"
+                    title="Copy Link"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const url = `${window.location.origin}/post/${post.id}`;
+                        navigator.clipboard.writeText(url);
+                        setShowCopied(true);
+                        setTimeout(() => setShowCopied(false), 2000);
+                    }}
+                >
+                    <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" /></svg>
+                </button>
+                <span className={`post-card-copied ${showCopied ? 'show' : ''}`}>Copied!</span>
+            </div>
         </div>
     );
 }
