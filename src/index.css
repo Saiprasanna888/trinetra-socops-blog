@@ -1310,3 +1310,125 @@ select {
     margin: 16px;
   }
 }
+
+/* ---------- Share Buttons ---------- */
+.article-share {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.article-share h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.share-btn:hover {
+  transform: translateY(-4px);
+  border-color: var(--neon-blue);
+  background: var(--neon-blue-glow);
+  color: var(--neon-blue);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.share-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.share-btn.whatsapp:hover {
+  border-color: var(--cyber-green);
+  background: var(--cyber-green-glow);
+  color: var(--cyber-green);
+  box-shadow: var(--shadow-glow-green);
+}
+
+.share-btn.copy:hover {
+  border-color: var(--accent-purple);
+  background: rgba(168, 85, 247, 0.15);
+  color: var(--accent-purple);
+}
+
+/* PostCard Share Icon */
+.post-card-share-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(10, 10, 15, 0.6);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all var(--transition-base);
+  z-index: 10;
+}
+
+.post-card:hover .post-card-share-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.post-card-share-btn:hover {
+  background: var(--neon-blue);
+  color: var(--bg-primary);
+  border-color: var(--neon-blue);
+}
+
+.post-card-share-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* Toast/Copied Feedback */
+.share-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--neon-blue);
+  color: var(--neon-blue);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: var(--shadow-glow-blue);
+  z-index: 2000;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.share-toast.show {
+  transform: translateX(-50%) translateY(0);
+}
