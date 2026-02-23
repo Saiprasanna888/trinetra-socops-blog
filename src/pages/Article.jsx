@@ -88,8 +88,6 @@ function Article() {
                 <h1>{post.title}</h1>
                 <div className="article-meta">
                     <span>{post.author}</span>
-                    <span className="dot"></span>
-                    <span>{formatDate(post.createdAt)}</span>
                 </div>
             </div>
 

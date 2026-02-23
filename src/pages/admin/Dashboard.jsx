@@ -123,7 +123,6 @@ function Dashboard() {
                         <th>Title</th>
                         <th>Category</th>
                         <th>Status</th>
-                        <th>Date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -133,7 +132,6 @@ function Dashboard() {
                             <td className="table-title">
                                 {post.title}
                             </td>
-                            <td>{post.category}</td>
                             <td>
                                 <span
                                     className={`status-badge ${post.status === 'published'
@@ -144,7 +142,6 @@ function Dashboard() {
                                     {post.status}
                                 </span>
                             </td>
-                            <td>{formatDate(post.createdAt)}</td>
                             <td>
                                 <div style={{ display: 'flex', gap: '8px' }}>
                                     <button

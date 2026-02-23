@@ -34,9 +34,6 @@ function Sidebar({ posts = [], popularPosts = [] }) {
                             className="sidebar-post-item"
                         >
                             <div className="sidebar-post-title">{post.title}</div>
-                            <div className="sidebar-post-date">
-                                {formatDate(post.createdAt)}
-                            </div>
                         </Link>
                     ))}
                 </div>
@@ -60,7 +57,7 @@ function Sidebar({ posts = [], popularPosts = [] }) {
                         >
                             <div className="sidebar-post-title">{post.title}</div>
                             <div className="sidebar-post-date">
-                                {post.category} • {formatDate(post.createdAt)}
+                                {post.category}
                             </div>
                         </Link>
                     ))}

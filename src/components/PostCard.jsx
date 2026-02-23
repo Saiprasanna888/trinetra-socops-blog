@@ -53,8 +53,6 @@ function PostCard({ post, index = 0 }) {
             <div className="post-card-body">
                 <div className="post-card-meta">
                     <span className="post-card-category">{post.category}</span>
-                    <span>•</span>
-                    <span>{formatDate(post.createdAt)}</span>
                 </div>
                 <h3 className="post-card-title">{post.title}</h3>
                 <p className="post-card-excerpt">{post.excerpt}</p>
