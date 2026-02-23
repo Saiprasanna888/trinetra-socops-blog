@@ -54,7 +54,7 @@ function Footer() {
             </div>
 
             <div className="footer-bottom">
-                <p>© {new Date().getFullYear()} Trinetra SOCops. All rights reserved. Built for the cybersecurity community.</p>
+                <p>© {new Date().getFullYear()} Trinetra SOCops. All rights reserved. Built by Saiprasanna Muppalla for the cybersecurity community.</p>
             </div>
         </footer>
     );

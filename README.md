@@ -66,4 +66,4 @@ A professional cybersecurity knowledge hub dedicated to SOC operations, threat a
 
 ## 📄 License
 
-© 2026 Trinetra SOCops. All rights reserved. Built for the cybersecurity community.
+© 2026 Trinetra SOCops. All rights reserved. Built by Saiprasanna Muppalla for the cybersecurity community.
