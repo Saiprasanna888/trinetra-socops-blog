@@ -1294,6 +1294,30 @@ select {
     display: block;
     overflow-x: auto;
   }
+
+  /* Mobile Admin Top Bar */
+  .admin-mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+
+  .admin-logo-small {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+  }
+}
+
+/* Hide mobile nav on desktop */
+.admin-mobile-nav {
+  display: none;
 }
 
 @media (max-width: 480px) {

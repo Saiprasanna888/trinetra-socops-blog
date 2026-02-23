@@ -16,6 +16,12 @@ function AdminLayout() {
 
     return (
         <div className="admin-layout">
+            <div className="admin-mobile-nav">
+                <div className="admin-logo-small">◈ Trinetra</div>
+                <Link to="/" className="btn btn-secondary btn-sm">
+                    🌐 View Site
+                </Link>
+            </div>
             <aside className="admin-sidebar">
                 <div className="admin-sidebar-header">
                     <h2>
