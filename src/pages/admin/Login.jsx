@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 
 function Login() {
@@ -87,6 +87,12 @@ function Login() {
                         {loading ? 'Authenticating...' : 'Sign In'}
                     </button>
                 </form>
+
+                <div style={{ marginTop: '24px' }}>
+                    <Link to="/" className="btn btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>
+                        ← Back to Site
+                    </Link>
+                </div>
 
                 <p style={{
                     marginTop: '24px',
