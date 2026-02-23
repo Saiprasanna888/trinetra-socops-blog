@@ -18,9 +18,14 @@ function AdminLayout() {
         <div className="admin-layout">
             <div className="admin-mobile-nav">
                 <div className="admin-logo-small">◈ Trinetra</div>
-                <Link to="/" className="btn btn-secondary btn-sm">
-                    🌐 View Site
-                </Link>
+                <div className="admin-mobile-controls">
+                    <Link to="/" className="btn btn-secondary btn-sm">
+                        🌐 Site
+                    </Link>
+                    <button onClick={handleLogout} className="btn btn-danger btn-sm">
+                        Logout
+                    </button>
+                </div>
             </div>
             <aside className="admin-sidebar">
                 <div className="admin-sidebar-header">

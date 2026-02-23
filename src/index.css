@@ -1296,7 +1296,7 @@ select {
   }
 
   /* Mobile Admin Top Bar */
-  .admin-mobile-nav {
+  .admin-layout .admin-mobile-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1313,9 +1313,14 @@ select {
     font-size: 1.1rem;
     color: var(--text-primary);
   }
+
+  .admin-mobile-controls {
+    display: flex;
+    gap: 8px;
+  }
 }
 
-/* Hide mobile nav on desktop */
+/* Base state - hidden on desktop */
 .admin-mobile-nav {
   display: none;
 }
