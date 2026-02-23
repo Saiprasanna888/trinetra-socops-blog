@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { CATEGORIES } from '../data/samplePosts';
+import { useAuth } from '../contexts/AuthContext';
 
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
+    const { currentUser } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -49,6 +51,18 @@ function Navbar() {
                             </Link>
                         </li>
                     ))}
+                    {currentUser && (
+                        <li>
+                            <Link
+                                to="/admin"
+                                className={location.pathname.startsWith('/admin') ? 'active' : ''}
+                                onClick={() => setMenuOpen(false)}
+                                style={{ color: 'var(--cyber-green)' }}
+                            >
+                                Dashboard
+                            </Link>
+                        </li>
+                    )}
                 </ul>
 
                 <form onSubmit={handleSearch} className="navbar-search">

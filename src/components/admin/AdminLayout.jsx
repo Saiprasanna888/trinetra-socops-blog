@@ -43,13 +43,11 @@ function AdminLayout() {
                         </NavLink>
                     </li>
                     <li>
-                        <a
-                            href="/"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <Link
+                            to="/"
                         >
                             🌐 View Site
-                        </a>
+                        </Link>
                     </li>
                 </ul>
 
