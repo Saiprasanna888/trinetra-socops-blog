@@ -26,7 +26,7 @@ function PostCard({ post, index = 0 }) {
         <div className={`post-card animate-fade-in-up stagger-${(index % 6) + 1}`} style={{ position: 'relative' }}>
             <Link
                 to={`/post/${post.id}`}
-                style={{ textDecoration: 'none', opacity: 0, display: 'block', height: '100%', width: '100%' }}
+                style={{ textDecoration: 'none', display: 'block', height: '100%', width: '100%' }}
             >
                 {post.featuredImage && (
                     <img

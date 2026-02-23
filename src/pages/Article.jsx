@@ -60,9 +60,6 @@ function Article() {
         setTimeout(() => setShowToast(false), 2000);
     };
 
-    const shareUrl = encodeURIComponent(window.location.href);
-    const shareTitle = encodeURIComponent(post.title || 'Check out this article');
-
     if (loading) {
         return (
             <div className="spinner-container">
@@ -84,6 +81,9 @@ function Article() {
             </div>
         );
     }
+
+    const shareUrl = encodeURIComponent(window.location.href);
+    const shareTitle = encodeURIComponent(post.title || 'Check out this article');
 
     return (
         <article className="article-page container-narrow animate-fade-in">
